@@ -50,17 +50,14 @@ model.compile(
 )
 
 # ── Train ─────────────────────────────────────────────────────────────────────
-# step2_train.py — add this callback
-
 history = model.fit(
     X_train, y_train,
     validation_data=(X_val, y_val),
     epochs=EPOCHS,
     verbose=1
 )
-
-# ── Save model ────────────────────────────────────────────────────────────────
 model.save(MODEL_SAVE_PATH)
+
 # ── Plot curves ───────────────────────────────────────────────────────────────
 def plot_curves(history):
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 4))
